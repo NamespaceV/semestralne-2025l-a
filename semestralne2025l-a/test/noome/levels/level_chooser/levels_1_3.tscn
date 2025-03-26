@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://oswcrb7gtxu5"]
+
+[ext_resource type="Script" uid="uid://cje20qqu85o62" path="res://test/noome/levels/level_chooser/levels_1_3.gd" id="1_ysiuy"]
+
+[node name="Levels1-3" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -822.0
+offset_top = -254.5
+offset_right = 822.0
+offset_bottom = 254.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ysiuy")
+
+[node name="Level1" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -213.0
+offset_right = 464.0
+offset_bottom = 213.0
+grow_vertical = 2
+text = "1
+"
+
+[node name="Level2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -213.0
+offset_right = 232.0
+offset_bottom = 213.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2
+"
+
+[node name="Level3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -464.0
+offset_top = -213.0
+offset_bottom = 213.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "3"
+
+[connection signal="pressed" from="Level1" to="." method="_on_level_1_pressed"]
