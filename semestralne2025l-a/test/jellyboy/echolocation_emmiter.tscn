@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://do1ektfxkyufa"]
+
+[ext_resource type="Script" uid="uid://kb5nexqyab4p" path="res://test/jellyboy/echolocation_emmiter.gd" id="1_i0wai"]
+[ext_resource type="PackedScene" uid="uid://cdax1nyl64mh1" path="res://test/jellyboy/trail_rectangle.tscn" id="2_fge7y"]
+
+[node name="EcholocationEmmiter" type="Node2D"]
+script = ExtResource("1_i0wai")
+trail_scene = ExtResource("2_fge7y")
+
+[node name="Trail" type="Node2D" parent="."]
+
+[node name="Manager" type="Node2D" parent="."]

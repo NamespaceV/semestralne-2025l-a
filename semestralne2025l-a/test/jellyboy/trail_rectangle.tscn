@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdax1nyl64mh1"]
+
+[ext_resource type="Script" uid="uid://c15aifagu4nxp" path="res://test/jellyboy/trail_rectangle.gd" id="1_aib03"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aib03"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aib03"]
+size = Vector3(2, 2, 2)
+
+[node name="TrailRectangle" type="Node2D"]
+script = ExtResource("1_aib03")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+material = SubResource("CanvasItemMaterial_aib03")
+mesh = SubResource("BoxMesh_aib03")
