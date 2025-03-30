@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cefwelefnnh2c"]
+
+[ext_resource type="Shader" uid="uid://beh2pmsvc4f7h" path="res://test/noome/levels/interactables/temperature_tile/hot_tile.gdshader" id="1_hj4uj"]
+[ext_resource type="Script" uid="uid://cgvt8o83ovoj1" path="res://test/noome/levels/interactables/temperature_tile/hot_tile.gd" id="1_n8fig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8fig"]
+size = Vector2(16, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntv8x"]
+shader = ExtResource("1_hj4uj")
+shader_parameter/color1 = Color(1, 0, 0, 1)
+shader_parameter/color2 = Color(0.692458, 1.34886e-05, 7.12335e-06, 1)
+shader_parameter/brightness = -0.935
+shader_parameter/timeOffset = 0.0
+shader_parameter/timeRate = 2.905
+shader_parameter/noiseAmmount = 0.225
+shader_parameter/offsetX = 0.0
+shader_parameter/flickerT = 0.6
+
+[node name="HotTile" type="Area2D"]
+script = ExtResource("1_n8fig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n8fig")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+material = SubResource("ShaderMaterial_ntv8x")
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
