@@ -43,3 +43,31 @@ offset_right = 1895.0
 offset_bottom = 1054.0
 theme_override_font_sizes/font_size = 75
 text = "Click Me"
+
+[node name="start_jelly" type="Button" parent="."]
+offset_left = 77.0
+offset_top = 335.0
+offset_right = 386.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 75
+text = "jellyboy"
+
+[node name="start_noome" type="Button" parent="."]
+offset_left = 428.0
+offset_top = 335.0
+offset_right = 737.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 75
+text = "noome"
+
+[node name="start_zephyr" type="Button" parent="."]
+offset_left = 768.0
+offset_top = 332.0
+offset_right = 1077.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 75
+text = "zephyr"
+
+[connection signal="pressed" from="start_jelly" to="." method="_on_start_jelly_pressed"]
+[connection signal="pressed" from="start_noome" to="." method="_on_start_noome_pressed"]
+[connection signal="pressed" from="start_zephyr" to="." method="_on_start_zephyr_pressed"]

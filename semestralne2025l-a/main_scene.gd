@@ -15,3 +15,15 @@ func on_button_clicked() -> void:
 	click_me_button.position = Vector2(x, y)
 	counter += 1
 	score_label.text = "Score: %d" % [counter]
+
+
+func _on_start_jelly_pressed() -> void:
+	get_tree().change_scene_to_file("res://test/jellyboy/test_scene.tscn")
+
+
+func _on_start_zephyr_pressed() -> void:
+	get_tree().change_scene_to_file("res://test/zephyr/movement.tscn")
+
+
+func _on_start_noome_pressed() -> void:
+	get_tree().change_scene_to_file("res://test/noome/game.tscn")
