@@ -28,3 +28,7 @@ func _physics_process(delta: float) -> void:
 		attack.name = "Attack"
 		attack.position = global_position + attack_distance * transform.y
 		get_tree().current_scene.add_child(attack, true)
+
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://test/zephyr/movement2.tscn")
