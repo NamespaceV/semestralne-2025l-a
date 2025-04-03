@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8x7ajsv2tuit"
-path="res://.godot/imported/tilemap_packed.png-73c4dff88b83662b7101657ccf01167b.ctex"
+uid="uid://cvu7oylucl8s7"
+path="res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-c28095914114e40d79d9ce0c0b3dbf4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test/noome/levels/level1/Tilemap/tilemap_packed.png"
-dest_files=["res://.godot/imported/tilemap_packed.png-73c4dff88b83662b7101657ccf01167b.ctex"]
+source_file="res://test/noome/characters/player/sprites/Small-8-Direction-Characters_by_AxulArt.png"
+dest_files=["res://.godot/imported/Small-8-Direction-Characters_by_AxulArt.png-c28095914114e40d79d9ce0c0b3dbf4f.ctex"]
 
 [params]
 
