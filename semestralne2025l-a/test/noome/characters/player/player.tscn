@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bb64nn8847niw"]
+[gd_scene load_steps=47 format=3 uid="uid://bb64nn8847niw"]
 
 [ext_resource type="Script" uid="uid://l37o8jc01e74" path="res://test/noome/characters/player/player.gd" id="1_m6ffn"]
 [ext_resource type="Texture2D" uid="uid://casfbtjew2n68" path="res://test/noome/characters/player/button_square_header_small_rectangle_screws.png" id="2_6mdxh"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://mp0p2e75gwrk" path="res://test/noome/characters/player/bar_shadow_round_large.png" id="2_yvvsa"]
 [ext_resource type="Texture2D" uid="uid://bja7vvggu8n22" path="res://test/noome/characters/player/bar_round_gloss_large.png" id="3_6mdxh"]
 [ext_resource type="Script" uid="uid://dsv5458v6skwg" path="res://test/noome/characters/player/health_bar.gd" id="4_e52n0"]
+[ext_resource type="Texture2D" uid="uid://bqwvr5ae8myhf" path="res://test/noome/characters/player/bar_round_gloss_large_green.png" id="6_5oct8"]
+[ext_resource type="Script" uid="uid://cum1lqevlxy85" path="res://test/noome/characters/player/stamina_bar.gd" id="6_e52n0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_upa5h"]
 
@@ -424,12 +426,13 @@ speed = 100.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="ButtonSquareHeaderSmallRectangleScrews" type="Sprite2D" parent="HUD"]
-position = Vector2(1820, 132)
+[node name="UIPanel" type="Sprite2D" parent="HUD"]
+position = Vector2(1808, 134)
 rotation = 1.57079
+scale = Vector2(1, 2.06563)
 texture = ExtResource("2_6mdxh")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD" node_paths=PackedStringArray("player")]
+[node name="HealthBar" type="TextureProgressBar" parent="HUD" node_paths=PackedStringArray("player")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -445,6 +448,26 @@ texture_under = ExtResource("2_yvvsa")
 texture_progress = ExtResource("3_6mdxh")
 script = ExtResource("4_e52n0")
 player = NodePath("../..")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="HUD" node_paths=PackedStringArray("player")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -134.0
+offset_top = 60.0
+offset_right = 10.0
+offset_bottom = 88.0
+grow_horizontal = 0
+rotation = 1.57079
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("2_yvvsa")
+texture_progress = ExtResource("6_5oct8")
+script = ExtResource("6_e52n0")
+player = NodePath("../..")
+
+[node name="StaminaTick" type="Timer" parent="HUD/StaminaBar"]
+wait_time = 0.3
 
 [node name="GameOver" type="ColorRect" parent="HUD"]
 visible = false
@@ -500,4 +523,5 @@ parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
+[connection signal="timeout" from="HUD/StaminaBar/StaminaTick" to="." method="_on_stamina_tick_timeout"]
 [connection signal="pressed" from="HUD/GameOver/Menu" to="." method="_on_menu_pressed"]
