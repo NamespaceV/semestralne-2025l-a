@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cgvt8o83ovoj1" path="res://test/noome/levels/interactables/temperature_tile/hot_tile.gd" id="1_n8fig"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8fig"]
-size = Vector2(16, 16)
+size = Vector2(64, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ntv8x"]
 shader = ExtResource("1_hj4uj")
@@ -19,13 +19,17 @@ shader_parameter/flickerT = 0.6
 
 [node name="HotTile" type="Area2D"]
 script = ExtResource("1_n8fig")
+damage_taken = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n8fig")
 
 [node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
 material = SubResource("ShaderMaterial_ntv8x")
-offset_left = -8.0
-offset_top = -8.0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

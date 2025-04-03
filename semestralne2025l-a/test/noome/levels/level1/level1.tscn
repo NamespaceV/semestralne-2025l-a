@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://byjek3m7hr432"]
+[gd_scene load_steps=7 format=4 uid="uid://byjek3m7hr432"]
 
 [ext_resource type="Texture2D" uid="uid://cd4ow4sm81iu7" path="res://test/noome/levels/level1/tilemap/tilesheet_complete.png" id="1_g232i"]
+[ext_resource type="PackedScene" uid="uid://cefwelefnnh2c" path="res://test/noome/levels/interactables/temperature_tile/hot_tile.tscn" id="2_yniuh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yniuh"]
 texture = ExtResource("1_g232i")
@@ -2043,3 +2044,9 @@ position = Vector2(514, 5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall4"]
 position = Vector2(65, 38)
 shape = SubResource("SegmentShape2D_yniuh")
+
+[node name="HotTile" parent="." instance=ExtResource("2_yniuh")]
+position = Vector2(-224, 94)
+
+[node name="HotTile2" parent="." instance=ExtResource("2_yniuh")]
+position = Vector2(164, 94)
