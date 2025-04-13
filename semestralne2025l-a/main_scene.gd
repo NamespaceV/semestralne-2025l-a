@@ -27,3 +27,7 @@ func _on_start_zephyr_pressed() -> void:
 
 func _on_start_noome_pressed() -> void:
 	get_tree().change_scene_to_file("res://test/noome/game.tscn")
+
+
+func _on_start_pixelnoob_pressed() -> void:
+	get_tree().change_scene_to_file("res://test/pixelnoob/scenes/pixelnoob_movement.tscn")
