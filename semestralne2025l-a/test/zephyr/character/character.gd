@@ -30,5 +30,5 @@ func _physics_process(delta: float) -> void:
 		get_tree().current_scene.add_child(attack, true)
 
 
-func _on_exit_body_entered(body: Node2D) -> void:
+func _on_exit_body_entered(_body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://test/zephyr/movement2.tscn")
