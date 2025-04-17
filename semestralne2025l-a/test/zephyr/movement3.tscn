@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://8vcyqxm2wgqu"]
 
 [ext_resource type="TileSet" uid="uid://brns5mh4x6a1h" path="res://test/zephyr/background/bg_tileset.tres" id="2_78utx"]
-[ext_resource type="Script" uid="uid://b64o5bdw6pwvg" path="res://test/zephyr/character3.gd" id="2_q15kj"]
+[ext_resource type="Script" uid="uid://b64o5bdw6pwvg" path="res://test/zephyr/character/character3.gd" id="2_q15kj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5n0b"]
 radius = 59.0339

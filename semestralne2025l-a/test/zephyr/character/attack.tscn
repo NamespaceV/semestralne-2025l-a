@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmf1wui2uybui"]
 
-[ext_resource type="Script" uid="uid://dk6leiqacsxw4" path="res://test/zephyr/attack.gd" id="1_334dy"]
+[ext_resource type="Script" uid="uid://dk6leiqacsxw4" path="res://test/zephyr/character/attack.gd" id="1_334dy"]
 
 [sub_resource type="Animation" id="Animation_4jkyu"]
 resource_name = "boom"

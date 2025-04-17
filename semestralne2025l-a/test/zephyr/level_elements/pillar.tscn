@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi7o2lhaav4r1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5n0b"]
+size = Vector2(87, 92)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7c3t3"]
+polygon = PackedVector2Array(-46, 42, -48, -48, 40, -52, 40, 42)
+
+[node name="Pillar" type="StaticBody2D"]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, -4)
+shape = SubResource("RectangleShape2D_c5n0b")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.683077, 0.683077, 0.683077, 1)
+polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -47, 44)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_7c3t3")

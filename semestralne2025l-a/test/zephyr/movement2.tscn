@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c20b6lai8cns6"]
 
-[ext_resource type="Script" uid="uid://dopamjsxmsagk" path="res://test/zephyr/character2.gd" id="1_8aj0r"]
+[ext_resource type="Script" uid="uid://dopamjsxmsagk" path="res://test/zephyr/character/character2.gd" id="1_8aj0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5n0b"]
 radius = 59.0339
