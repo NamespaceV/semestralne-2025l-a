@@ -5,7 +5,7 @@ var rotation_speed := PI / 2 # per second
 var attack_distance := -100.0
 
 
-var attack_scene = load("res://test/zephyr/attack.tscn")
+var attack_scene = load("res://test/zephyr/character/attack.tscn")
 
 func _physics_process(delta: float) -> void:
 
