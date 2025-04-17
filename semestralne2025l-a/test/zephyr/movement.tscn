@@ -12,6 +12,9 @@ size = Vector2(89, 90)
 
 [node name="Movement" type="Node2D"]
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1
+
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1915.0
 offset_bottom = 1076.0
@@ -48,88 +51,87 @@ position = Vector2(-3.5, -4)
 position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_l7oau")
 
-[node name="Pillar" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillars" type="Node" parent="."]
+
+[node name="Pillar" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(230, 416)
 
-[node name="Pillar24" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar24" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(277, 802)
 
-[node name="Pillar2" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar2" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(212, 595)
 
-[node name="Pillar3" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar3" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(323, 279)
 
-[node name="Pillar4" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar4" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(394, 154)
 
-[node name="Pillar5" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar5" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(519, 147)
 
-[node name="Pillar6" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar6" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(651, 149)
 
-[node name="Pillar7" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar7" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(795, 149)
 
-[node name="Pillar8" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar8" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(958, 147)
 
-[node name="Pillar9" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar9" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(382, 932)
 
-[node name="Pillar21" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar21" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1685, 319)
 
-[node name="Pillar25" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar25" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1796, 542)
 
-[node name="Pillar22" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar22" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1747, 430)
 
-[node name="Pillar23" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar23" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1590, 194)
 
-[node name="Pillar26" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar26" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1434, 149)
 
-[node name="Pillar27" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar27" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1764, 722)
 
-[node name="Pillar10" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar10" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(507, 925)
 
-[node name="Pillar11" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar11" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(639, 927)
 
-[node name="Pillar12" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar12" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(783, 927)
 
-[node name="Pillar13" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar13" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(946, 925)
 
-[node name="Pillar14" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar14" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1123, 147)
 
-[node name="Pillar20" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar20" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1267, 145)
 
-[node name="Pillar15" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar15" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1134, 908)
 
-[node name="Pillar16" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar16" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1259, 901)
 
-[node name="Pillar17" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar17" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1391, 903)
 
-[node name="Pillar18" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar18" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1535, 903)
 
-[node name="Pillar19" parent="." instance=ExtResource("2_l7oau")]
+[node name="Pillar19" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(1686, 842)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-blend_mode = 1
-
-[connection signal="body_entered" from="Exit/Area2D" to="Character" method="_on_exit_body_entered"]
+[connection signal="body_entered" from="Exit/Area2D" to="Character" method="_on_area_2d_body_entered"]

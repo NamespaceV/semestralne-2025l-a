@@ -5,7 +5,7 @@ var rotation_speed := 3 * PI / 2 # per second
 var attack_distance := -100.0
 
 
-var attack_scene = load("res://test/zephyr/attack.tscn")
+var attack_scene = load("res://test/zephyr/character/attack.tscn")
 
 func _physics_process(delta: float) -> void:
 
@@ -33,5 +33,9 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func go_to_next_level():
 	get_tree().change_scene_to_file("res://test/zephyr/movement.tscn")
+
+
+func _on_area_2d_body_entered(_body: Node2D) -> void:
+	call_deferred("go_to_next_level")
