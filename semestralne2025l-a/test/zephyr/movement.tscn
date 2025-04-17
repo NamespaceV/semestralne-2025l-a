@@ -129,4 +129,7 @@ position = Vector2(1535, 903)
 [node name="Pillar19" parent="." instance=ExtResource("2_l7oau")]
 position = Vector2(1686, 842)
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1
+
 [connection signal="body_entered" from="Exit/Area2D" to="Character" method="_on_exit_body_entered"]
