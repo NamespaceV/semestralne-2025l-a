@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://di3mkqx322ow7"]
+[gd_scene load_steps=6 format=3 uid="uid://di3mkqx322ow7"]
 
-[ext_resource type="Script" uid="uid://olx7pm3i3pw2" path="res://test/zephyr/character.gd" id="1_c5n0b"]
+[ext_resource type="Script" uid="uid://olx7pm3i3pw2" path="res://test/zephyr/character/character.gd" id="1_c5n0b"]
+[ext_resource type="PackedScene" uid="uid://bi7o2lhaav4r1" path="res://test/zephyr/level_elements/pillar.tscn" id="2_l7oau"]
+[ext_resource type="Texture2D" uid="uid://b3yiljmapt2uc" path="res://test/zephyr/character/light.png" id="2_ox3gp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5n0b"]
 radius = 59.0339
@@ -8,10 +10,10 @@ radius = 59.0339
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7oau"]
 size = Vector2(89, 90)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5n0b"]
-size = Vector2(87, 92)
-
 [node name="Movement" type="Node2D"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+blend_mode = 1
 
 [node name="Background" type="ColorRect" parent="."]
 offset_right = 1915.0
@@ -31,6 +33,12 @@ polygon = PackedVector2Array(-35, 11, -40, -37, -27, -41, -27, -16, -9, -21, -22
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
 shape = SubResource("CircleShape2D_c5n0b")
 
+[node name="PointLight2D" type="PointLight2D" parent="Character"]
+position = Vector2(-2, -3.50004)
+scale = Vector2(2.75, 2.83203)
+shadow_enabled = true
+texture = ExtResource("2_ox3gp")
+
 [node name="Exit" type="Polygon2D" parent="."]
 position = Vector2(1369, 299)
 color = Color(0.0301066, 0.82033, 0.330482, 1)
@@ -43,280 +51,87 @@ position = Vector2(-3.5, -4)
 position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_l7oau")
 
-[node name="Pillar" type="StaticBody2D" parent="."]
+[node name="Pillars" type="Node" parent="."]
+
+[node name="Pillar" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(230, 416)
-disable_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar2" type="StaticBody2D" parent="."]
+[node name="Pillar24" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(277, 802)
-disable_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar2"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar2"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar3" type="StaticBody2D" parent="."]
+[node name="Pillar2" parent="Pillars" instance=ExtResource("2_l7oau")]
 position = Vector2(212, 595)
-disable_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar3"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar3" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(323, 279)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar3"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar4" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(394, 154)
 
-[node name="Pillar4" type="StaticBody2D" parent="."]
-position = Vector2(295, 242)
-disable_mode = 1
+[node name="Pillar5" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(519, 147)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar4"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar6" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(651, 149)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar4"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar7" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(795, 149)
 
-[node name="Pillar5" type="StaticBody2D" parent="."]
-position = Vector2(471, 128)
-disable_mode = 1
+[node name="Pillar8" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(958, 147)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar5"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar9" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(382, 932)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar5"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar21" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1685, 319)
 
-[node name="Pillar6" type="StaticBody2D" parent="."]
-position = Vector2(629, 123)
-disable_mode = 1
+[node name="Pillar25" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1796, 542)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar6"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar22" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1747, 430)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar6"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar23" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1590, 194)
 
-[node name="Pillar7" type="StaticBody2D" parent="."]
-position = Vector2(792, 118)
-disable_mode = 1
+[node name="Pillar26" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1434, 149)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar7"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar27" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1764, 722)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar7"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar10" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(507, 925)
 
-[node name="Pillar8" type="StaticBody2D" parent="."]
-position = Vector2(942, 108)
-disable_mode = 1
+[node name="Pillar11" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(639, 927)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar8"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar12" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(783, 927)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar8"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar13" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(946, 925)
 
-[node name="Pillar9" type="StaticBody2D" parent="."]
-position = Vector2(404, 942)
-disable_mode = 1
+[node name="Pillar14" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1123, 147)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar9"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar20" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1267, 145)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar9"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar15" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1134, 908)
 
-[node name="Pillar10" type="StaticBody2D" parent="."]
-position = Vector2(562, 937)
-disable_mode = 1
+[node name="Pillar16" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1259, 901)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar10"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
+[node name="Pillar17" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1391, 903)
 
-[node name="Polygon2D" type="Polygon2D" parent="Pillar10"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+[node name="Pillar18" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1535, 903)
 
-[node name="Pillar11" type="StaticBody2D" parent="."]
-position = Vector2(725, 932)
-disable_mode = 1
+[node name="Pillar19" parent="Pillars" instance=ExtResource("2_l7oau")]
+position = Vector2(1686, 842)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar11"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar11"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar12" type="StaticBody2D" parent="."]
-position = Vector2(875, 922)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar12"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar12"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar13" type="StaticBody2D" parent="."]
-position = Vector2(1071, 934)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar13"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar13"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar14" type="StaticBody2D" parent="."]
-position = Vector2(1229, 929)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar14"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar14"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar15" type="StaticBody2D" parent="."]
-position = Vector2(1392, 924)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar15"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar15"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar16" type="StaticBody2D" parent="."]
-position = Vector2(1536, 842)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar16"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar16"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar21" type="StaticBody2D" parent="."]
-position = Vector2(1618, 725)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar21"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar21"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar22" type="StaticBody2D" parent="."]
-position = Vector2(1651, 398)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar22"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar22"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar23" type="StaticBody2D" parent="."]
-position = Vector2(1700, 548)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar23"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar23"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar17" type="StaticBody2D" parent="."]
-position = Vector2(1131, 164)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar17"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar17"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar18" type="StaticBody2D" parent="."]
-position = Vector2(1289, 159)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar18"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar18"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar19" type="StaticBody2D" parent="."]
-position = Vector2(1452, 154)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar19"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar19"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[node name="Pillar20" type="StaticBody2D" parent="."]
-position = Vector2(1576, 261)
-disable_mode = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar20"]
-position = Vector2(-3.5, -4)
-shape = SubResource("RectangleShape2D_c5n0b")
-
-[node name="Polygon2D" type="Polygon2D" parent="Pillar20"]
-color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
-
-[connection signal="body_entered" from="Exit/Area2D" to="Character" method="_on_exit_body_entered"]
+[connection signal="body_entered" from="Exit/Area2D" to="Character" method="_on_area_2d_body_entered"]

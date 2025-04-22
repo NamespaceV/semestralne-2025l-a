@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddbj26s1kpbpy"]
 
-[ext_resource type="Script" uid="uid://olx7pm3i3pw2" path="res://test/zephyr/character.gd" id="1_covvg"]
-[ext_resource type="PackedScene" uid="uid://do1ektfxkyufa" path="res://test/jellyboy/echolocation_emmiter.tscn" id="2_mavlv"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_mavlv"]
-radius = 59.0339
+[ext_resource type="Texture2D" uid="uid://b12i1ktlbjaqt" path="res://icon.svg" id="1_covvg"]
+[ext_resource type="Script" uid="uid://bgx8vd3pngd26" path="res://test/jellyboy/movement_character.gd" id="1_mavlv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to65c"]
-size = Vector2(87, 92)
+size = Vector2(81.5, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mavlv"]
+size = Vector2(122, 123)
 
 [node name="TestScene" type="Node2D"]
 
@@ -15,20 +15,6 @@ size = Vector2(87, 92)
 offset_right = 1915.0
 offset_bottom = 1076.0
 color = Color(0.169245, 0.169245, 0.169245, 1)
-
-[node name="Character" type="CharacterBody2D" parent="."]
-position = Vector2(884, 726)
-motion_mode = 1
-script = ExtResource("1_covvg")
-
-[node name="Polygon2D" type="Polygon2D" parent="Character"]
-position = Vector2(-13, 21)
-polygon = PackedVector2Array(-35, 11, -40, -37, -27, -41, -27, -16, -9, -21, -22, -32, -14, -48, 15, -51, 27, -38, 8, -29, 22, -22, 52, -22, 46, -41, 75, -45, 48, 12)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character"]
-shape = SubResource("CircleShape2D_mavlv")
-
-[node name="EcholocationEmmiter" parent="Character" instance=ExtResource("2_mavlv")]
 
 [node name="Pillar" type="StaticBody2D" parent="."]
 position = Vector2(1359, 139)
@@ -41,7 +27,7 @@ shape = SubResource("RectangleShape2D_to65c")
 [node name="Polygon2D" type="Polygon2D" parent="Pillar"]
 scale = Vector2(10, 1)
 color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+polygon = PackedVector2Array(-40.5, -50, 40.7, -49, 40, 42, -40.6, 48)
 
 [node name="Pillar2" type="StaticBody2D" parent="."]
 position = Vector2(1750, 422)
@@ -54,20 +40,21 @@ shape = SubResource("RectangleShape2D_to65c")
 [node name="Polygon2D" type="Polygon2D" parent="Pillar2"]
 scale = Vector2(1, 5)
 color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+polygon = PackedVector2Array(-46, -48, 39, -50, 39, 45.4, -40, 46)
 
 [node name="Pillar3" type="StaticBody2D" parent="."]
 position = Vector2(1038, 503)
 disable_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pillar3"]
+position = Vector2(-17.5, -6.5)
 scale = Vector2(10, 1)
 shape = SubResource("RectangleShape2D_to65c")
 
 [node name="Polygon2D" type="Polygon2D" parent="Pillar3"]
 scale = Vector2(10, 1)
 color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+polygon = PackedVector2Array(-42.4, -50, 39.8, -50, 40, 42, -42, 40)
 
 [node name="Pillar4" type="StaticBody2D" parent="."]
 position = Vector2(309, 628)
@@ -80,4 +67,15 @@ shape = SubResource("RectangleShape2D_to65c")
 [node name="Polygon2D" type="Polygon2D" parent="Pillar4"]
 scale = Vector2(1, 5)
 color = Color(0.683077, 0.683077, 0.683077, 1)
-polygon = PackedVector2Array(-46, -48, 39, -50, 40, 42, -42, 40)
+polygon = PackedVector2Array(-47, -46.6, 40, -46.4, 43, 45.4, -46, 45.8)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(979, 694)
+script = ExtResource("1_mavlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-1, 0.5)
+shape = SubResource("RectangleShape2D_mavlv")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_covvg")

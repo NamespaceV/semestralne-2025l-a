@@ -26,7 +26,7 @@ func _ready():
 	playback = animation_tree["parameters/playback"]
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if current_health <= 0:
 		is_dead = true
 		$HUD/GameOver.visible = true

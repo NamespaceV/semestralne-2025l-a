@@ -28,9 +28,9 @@ team alpha"
 
 [node name="Score" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1199.0
+offset_left = 1515.0
 offset_top = 298.0
-offset_right = 1501.0
+offset_right = 1817.0
 offset_bottom = 401.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
@@ -68,6 +68,15 @@ offset_bottom = 443.0
 theme_override_font_sizes/font_size = 75
 text = "zephyr"
 
+[node name="start_pixelnoob" type="Button" parent="."]
+offset_left = 1116.0
+offset_top = 332.0
+offset_right = 1483.0
+offset_bottom = 443.0
+theme_override_font_sizes/font_size = 75
+text = "pixelnoob"
+
 [connection signal="pressed" from="start_jelly" to="." method="_on_start_jelly_pressed"]
 [connection signal="pressed" from="start_noome" to="." method="_on_start_noome_pressed"]
 [connection signal="pressed" from="start_zephyr" to="." method="_on_start_zephyr_pressed"]
+[connection signal="pressed" from="start_pixelnoob" to="." method="_on_start_pixelnoob_pressed"]

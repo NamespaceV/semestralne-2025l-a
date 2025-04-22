@@ -5,5 +5,5 @@ extends Node2D
 func _ready() -> void:
 	anim.animation_finished.connect(on_animation_finished)
 
-func on_animation_finished(name:String) -> void:
+func on_animation_finished(_anim_name:String) -> void:
 	queue_free()
