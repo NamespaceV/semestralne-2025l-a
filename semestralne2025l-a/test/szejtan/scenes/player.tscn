@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://qfv0lllinwcx"]
+
+[ext_resource type="Texture2D" uid="uid://bpge8lt5gdfk4" path="res://test/szejtan/mieciu.png" id="1_htdnp"]
+[ext_resource type="Script" uid="uid://deudd2kweno1v" path="res://test/szejtan/scripts/player.gd" id="1_tyhwj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htdnp"]
+radius = 99.0808
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_tyhwj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(23, -8)
+texture = ExtResource("1_htdnp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_htdnp")

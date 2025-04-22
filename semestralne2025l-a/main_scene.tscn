@@ -13,7 +13,7 @@ position = Vector2(960, 544)
 offset_left = 24.0
 offset_top = 21.0
 offset_right = 1893.0
-offset_bottom = 471.0
+offset_bottom = 649.0
 
 [node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
@@ -52,6 +52,14 @@ offset_bottom = 446.0
 theme_override_font_sizes/font_size = 75
 text = "jellyboy"
 
+[node name="start_szejtan" type="Button" parent="."]
+offset_left = 78.0
+offset_top = 481.0
+offset_right = 387.0
+offset_bottom = 592.0
+theme_override_font_sizes/font_size = 75
+text = "szejtan"
+
 [node name="start_noome" type="Button" parent="."]
 offset_left = 428.0
 offset_top = 335.0
@@ -77,6 +85,7 @@ theme_override_font_sizes/font_size = 75
 text = "pixelnoob"
 
 [connection signal="pressed" from="start_jelly" to="." method="_on_start_jelly_pressed"]
+[connection signal="pressed" from="start_szejtan" to="." method="_on_start_szejtan_pressed"]
 [connection signal="pressed" from="start_noome" to="." method="_on_start_noome_pressed"]
 [connection signal="pressed" from="start_zephyr" to="." method="_on_start_zephyr_pressed"]
 [connection signal="pressed" from="start_pixelnoob" to="." method="_on_start_pixelnoob_pressed"]
