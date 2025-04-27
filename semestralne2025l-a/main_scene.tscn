@@ -9,24 +9,31 @@ button_teleport_area = Rect2(45, 495, 1540, 450)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 544)
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Test" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Test"]
 offset_left = 24.0
 offset_top = 21.0
 offset_right = 1893.0
 offset_bottom = 649.0
 
-[node name="Label" type="Label" parent="ColorRect"]
+[node name="Label" type="Label" parent="Test/ColorRect"]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 47.0
-offset_right = 112.0
-offset_bottom = 70.0
+offset_left = 75.0
+offset_top = 94.0
+offset_right = 1480.0
+offset_bottom = 303.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 text = "Welcome to projekt semestralny 2025L
 team alpha"
 
-[node name="Score" type="Label" parent="ColorRect"]
+[node name="Score" type="Label" parent="Test/ColorRect"]
 layout_mode = 0
 offset_left = 1515.0
 offset_top = 298.0
@@ -36,7 +43,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 75
 text = "Score : 0"
 
-[node name="ClickMeButton" type="Button" parent="."]
+[node name="ClickMeButton" type="Button" parent="Test"]
 offset_left = 1586.0
 offset_top = 943.0
 offset_right = 1895.0
@@ -44,7 +51,7 @@ offset_bottom = 1054.0
 theme_override_font_sizes/font_size = 75
 text = "Click Me"
 
-[node name="start_jelly" type="Button" parent="."]
+[node name="start_jelly" type="Button" parent="Test"]
 offset_left = 77.0
 offset_top = 335.0
 offset_right = 386.0
@@ -52,7 +59,7 @@ offset_bottom = 446.0
 theme_override_font_sizes/font_size = 75
 text = "jellyboy"
 
-[node name="start_szejtan" type="Button" parent="."]
+[node name="start_szejtan" type="Button" parent="Test"]
 offset_left = 78.0
 offset_top = 481.0
 offset_right = 387.0
@@ -60,7 +67,7 @@ offset_bottom = 592.0
 theme_override_font_sizes/font_size = 75
 text = "szejtan"
 
-[node name="start_noome" type="Button" parent="."]
+[node name="start_noome" type="Button" parent="Test"]
 offset_left = 428.0
 offset_top = 335.0
 offset_right = 737.0
@@ -68,7 +75,7 @@ offset_bottom = 446.0
 theme_override_font_sizes/font_size = 75
 text = "noome"
 
-[node name="start_zephyr" type="Button" parent="."]
+[node name="start_zephyr" type="Button" parent="Test"]
 offset_left = 768.0
 offset_top = 332.0
 offset_right = 1077.0
@@ -76,7 +83,7 @@ offset_bottom = 443.0
 theme_override_font_sizes/font_size = 75
 text = "zephyr"
 
-[node name="start_pixelnoob" type="Button" parent="."]
+[node name="start_pixelnoob" type="Button" parent="Test"]
 offset_left = 1116.0
 offset_top = 332.0
 offset_right = 1483.0
@@ -84,8 +91,53 @@ offset_bottom = 443.0
 theme_override_font_sizes/font_size = 75
 text = "pixelnoob"
 
-[connection signal="pressed" from="start_jelly" to="." method="_on_start_jelly_pressed"]
-[connection signal="pressed" from="start_szejtan" to="." method="_on_start_szejtan_pressed"]
-[connection signal="pressed" from="start_noome" to="." method="_on_start_noome_pressed"]
-[connection signal="pressed" from="start_zephyr" to="." method="_on_start_zephyr_pressed"]
-[connection signal="pressed" from="start_pixelnoob" to="." method="_on_start_pixelnoob_pressed"]
+[node name="TestExit" type="Button" parent="Test"]
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 299.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 75
+text = "Back"
+
+[node name="Main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="Main"]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 319.0
+offset_right = 1123.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 75
+text = "PICON"
+
+[node name="Test" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 14.0
+offset_right = 328.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 75
+text = "Test"
+
+[node name="Level1" type="Button" parent="Main"]
+layout_mode = 0
+offset_left = 714.0
+offset_top = 496.0
+offset_right = 1210.0
+offset_bottom = 613.0
+theme_override_font_sizes/font_size = 75
+text = "Level1
+"
+
+[connection signal="pressed" from="Test/start_jelly" to="." method="_on_start_jelly_pressed"]
+[connection signal="pressed" from="Test/start_szejtan" to="." method="_on_start_szejtan_pressed"]
+[connection signal="pressed" from="Test/start_noome" to="." method="_on_start_noome_pressed"]
+[connection signal="pressed" from="Test/start_zephyr" to="." method="_on_start_zephyr_pressed"]
+[connection signal="pressed" from="Test/start_pixelnoob" to="." method="_on_start_pixelnoob_pressed"]
+[connection signal="pressed" from="Test/TestExit" to="." method="_on_test_exit_pressed"]
+[connection signal="pressed" from="Main/Test" to="." method="_on_test_pressed"]
+[connection signal="pressed" from="Main/Level1" to="." method="_on_level_1_pressed"]
