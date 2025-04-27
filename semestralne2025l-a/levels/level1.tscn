@@ -180,6 +180,21 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.727658, 0, 0.11352, 1)
 sources/0 = SubResource("TileSetAtlasSource_5n2ce")
 
+[sub_resource type="Animation" id="Animation_61w3m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(649, 9)]
+}
+
 [sub_resource type="Animation" id="Animation_ua5ty"]
 resource_name = "enemy_idle"
 loop_mode = 1
@@ -194,21 +209,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(649, 9), Vector2(649, 20), Vector2(649, 9)]
-}
-
-[sub_resource type="Animation" id="Animation_61w3m"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(649, 9)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pdpul"]
@@ -228,8 +228,6 @@ tile_map_data = PackedByteArray("AAD3//X/AAAAAAAAAAD3//b/AAACAAAAAAD3//f/AAABAAA
 tile_set = SubResource("TileSet_bwtbi")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-energy = 0.8
 blend_mode = 1
 
 [node name="Enemy" parent="." instance=ExtResource("3_b3oru")]
