@@ -1,17 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://ck0tpp42ve0h"]
+[gd_scene load_steps=10 format=3 uid="uid://ck0tpp42ve0h"]
 
 [ext_resource type="Script" uid="uid://fhyy3c00wotg" path="res://characters/player/player.gd" id="1_xxgcw"]
 [ext_resource type="Texture2D" uid="uid://caqqu7rqwkuhe" path="res://characters/player/player.png" id="2_exd8k"]
 [ext_resource type="Texture2D" uid="uid://co67rrtfjct2c" path="res://characters/player/light_near.png" id="3_exd8k"]
 [ext_resource type="Texture2D" uid="uid://c88f0u4tjgsr3" path="res://characters/player/light_cone.png" id="4_5dc8e"]
+[ext_resource type="Texture2D" uid="uid://jrkiy57g3k30" path="res://characters/player/player_frame1.png" id="5_dirf7"]
+[ext_resource type="Texture2D" uid="uid://dkne4ln0xib8d" path="res://characters/player/player_frame2.png" id="6_idpv6"]
+[ext_resource type="Texture2D" uid="uid://djqs83g2buja7" path="res://characters/player/player_eyes.png" id="7_rpf03"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_htdnp"]
 radius = 9.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5dtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dirf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_idpv6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_xxgcw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Temp_Sprite" type="Sprite2D" parent="."]
+visible = false
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_exd8k")
@@ -31,3 +49,14 @@ scale = Vector2(0.914063, 0.941327)
 shadow_enabled = true
 texture = ExtResource("4_5dc8e")
 offset = Vector2(128, 0)
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 1)
+rotation = 1.57154
+scale = Vector2(0.215609, 0.215609)
+sprite_frames = SubResource("SpriteFrames_x5dtk")
+autoplay = "default"
+frame_progress = 0.487244
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture = ExtResource("7_rpf03")
