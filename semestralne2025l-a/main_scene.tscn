@@ -17,6 +17,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="Test"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 21.0
 offset_right = 1893.0
@@ -44,6 +45,7 @@ theme_override_font_sizes/font_size = 75
 text = "Score : 0"
 
 [node name="ClickMeButton" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 1586.0
 offset_top = 943.0
 offset_right = 1895.0
@@ -52,6 +54,7 @@ theme_override_font_sizes/font_size = 75
 text = "Click Me"
 
 [node name="start_jelly" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 77.0
 offset_top = 335.0
 offset_right = 386.0
@@ -60,6 +63,7 @@ theme_override_font_sizes/font_size = 75
 text = "jellyboy"
 
 [node name="start_szejtan" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 78.0
 offset_top = 481.0
 offset_right = 387.0
@@ -68,6 +72,7 @@ theme_override_font_sizes/font_size = 75
 text = "szejtan"
 
 [node name="start_noome" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 428.0
 offset_top = 335.0
 offset_right = 737.0
@@ -76,6 +81,7 @@ theme_override_font_sizes/font_size = 75
 text = "noome"
 
 [node name="start_zephyr" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 768.0
 offset_top = 332.0
 offset_right = 1077.0
@@ -84,6 +90,7 @@ theme_override_font_sizes/font_size = 75
 text = "zephyr"
 
 [node name="start_pixelnoob" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 1116.0
 offset_top = 332.0
 offset_right = 1483.0
@@ -92,6 +99,7 @@ theme_override_font_sizes/font_size = 75
 text = "pixelnoob"
 
 [node name="TestExit" type="Button" parent="Test"]
+layout_mode = 0
 offset_left = 21.0
 offset_top = 20.0
 offset_right = 299.0
