@@ -25,10 +25,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xxgcw")
 
-[node name="Temp_Sprite" type="Sprite2D" parent="."]
+[node name="TemporarySprite" type="Sprite2D" parent="."]
 visible = false
 rotation = 1.5708
 scale = Vector2(0.1, 0.1)

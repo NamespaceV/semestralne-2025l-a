@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://stdy8gmpcsag"]
+[gd_scene load_steps=9 format=3 uid="uid://stdy8gmpcsag"]
 
 [ext_resource type="Script" uid="uid://bp81sfswrglu1" path="res://main_scene.gd" id="1_0f027"]
+[ext_resource type="Texture2D" uid="uid://tm6eefjumvlb" path="res://sprites/Background_MainMenu.png" id="2_2c62f"]
+[ext_resource type="Texture2D" uid="uid://dkywgptmmvbow" path="res://sprites/Button_Play.png" id="3_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://bwkhsvmjyt832" path="res://characters/player/immovable_player.tscn" id="4_8mm7a"]
+[ext_resource type="Texture2D" uid="uid://dwlx11om7kgwg" path="res://sprites/Cage.png" id="5_8mm7a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d5x1h"]
+texture = ExtResource("3_gyfs4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8mm7a"]
+texture = ExtResource("3_gyfs4")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gyfs4"]
+texture = ExtResource("3_gyfs4")
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_0f027")
@@ -113,16 +126,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Title" type="Label" parent="Main"]
-layout_mode = 0
-offset_left = 830.0
-offset_top = 319.0
-offset_right = 1123.0
-offset_bottom = 422.0
-theme_override_font_sizes/font_size = 75
-text = "PICON"
+[node name="Background" type="Sprite2D" parent="Main"]
+position = Vector2(960, 544)
+texture = ExtResource("2_2c62f")
 
 [node name="Test" type="Button" parent="Main"]
+visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 14.0
@@ -133,13 +142,22 @@ text = "Test"
 
 [node name="Level1" type="Button" parent="Main"]
 layout_mode = 0
-offset_left = 714.0
-offset_top = 496.0
-offset_right = 1210.0
-offset_bottom = 613.0
+offset_left = 1083.0
+offset_top = 639.0
+offset_right = 1575.0
+offset_bottom = 832.0
 theme_override_font_sizes/font_size = 75
-text = "Level1
-"
+theme_override_styles/hover = SubResource("StyleBoxTexture_d5x1h")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8mm7a")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gyfs4")
+
+[node name="ImmovablePlayer" parent="Main" instance=ExtResource("4_8mm7a")]
+position = Vector2(362, 524)
+scale = Vector2(8, 8)
+
+[node name="Cage" type="Sprite2D" parent="Main"]
+position = Vector2(397, 540)
+texture = ExtResource("5_8mm7a")
 
 [connection signal="pressed" from="Test/start_jelly" to="." method="_on_start_jelly_pressed"]
 [connection signal="pressed" from="Test/start_szejtan" to="." method="_on_start_szejtan_pressed"]

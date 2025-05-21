@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwkhsvmjyt832"]
+
+[ext_resource type="Script" uid="uid://b2t40vb7j5u0m" path="res://characters/player/immovable_player.gd" id="1_u82u2"]
+[ext_resource type="Texture2D" uid="uid://caqqu7rqwkuhe" path="res://characters/player/player.png" id="2_vu8mw"]
+[ext_resource type="Texture2D" uid="uid://co67rrtfjct2c" path="res://characters/player/light_near.png" id="3_4nov0"]
+[ext_resource type="Texture2D" uid="uid://c88f0u4tjgsr3" path="res://characters/player/light_cone.png" id="4_v8dxk"]
+[ext_resource type="Texture2D" uid="uid://jrkiy57g3k30" path="res://characters/player/player_frame1.png" id="5_lum5w"]
+[ext_resource type="Texture2D" uid="uid://dkne4ln0xib8d" path="res://characters/player/player_frame2.png" id="6_501nf"]
+[ext_resource type="Texture2D" uid="uid://djqs83g2buja7" path="res://characters/player/player_eyes.png" id="7_wr2hs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_htdnp"]
+radius = 9.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5dtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lum5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_501nf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ImmovablePlayer" type="CharacterBody2D"]
+script = ExtResource("1_u82u2")
+
+[node name="TemporarySprite" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_vu8mw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_htdnp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(0.257813, 0.265503)
+shadow_enabled = true
+texture = ExtResource("3_4nov0")
+
+[node name="LightCone2D" type="PointLight2D" parent="."]
+position = Vector2(2.00001, 1)
+scale = Vector2(0.914063, 0.941327)
+shadow_enabled = true
+texture = ExtResource("4_v8dxk")
+offset = Vector2(128, 0)
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+position = Vector2(3, 1)
+rotation = 1.57154
+scale = Vector2(0.215609, 0.215609)
+sprite_frames = SubResource("SpriteFrames_x5dtk")
+autoplay = "default"
+frame_progress = 0.487244
+
+[node name="Sprite2D" type="Sprite2D" parent="Body"]
+texture = ExtResource("7_wr2hs")
