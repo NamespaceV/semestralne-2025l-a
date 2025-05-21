@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://drre41wyu3ow5"]
 
+[ext_resource type="Texture2D" uid="uid://j2ve4x4niuyt" path="res://sprites/Player_Bullet.png" id="1_mkf8s"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1aey"]
 size = Vector2(6, 6)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h1aey"]
 
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -13,5 +13,5 @@ shape = SubResource("RectangleShape2D_h1aey")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(5.5, 5.5)
-texture = SubResource("PlaceholderTexture2D_h1aey")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_mkf8s")
