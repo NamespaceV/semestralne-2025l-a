@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://dgjmnfabkcywi"]
+[gd_scene load_steps=17 format=4 uid="uid://dgjmnfabkcywi"]
 
 [ext_resource type="Texture2D" uid="uid://bw3bhas5mo6qb" path="res://tmp_assets/DwarvenDelve/Background/CaveTilemap.png" id="1_exekv"]
 [ext_resource type="PackedScene" uid="uid://ck0tpp42ve0h" path="res://characters/player/player.tscn" id="2_pdtm5"]
 [ext_resource type="PackedScene" uid="uid://btun6gu86fuuu" path="res://characters/enemy/enemy.tscn" id="3_b3oru"]
 [ext_resource type="PackedScene" uid="uid://5tmg1af0akx" path="res://interactables/switch.tscn" id="4_ua5ty"]
 [ext_resource type="AudioStream" uid="uid://bwkdfrn7g0ubv" path="res://bgm/23.mp3" id="5_61w3m"]
+[ext_resource type="Texture2D" uid="uid://dwlx11om7kgwg" path="res://sprites/Cage.png" id="6_pdpul"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pdtm5"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -218,6 +219,9 @@ _data = {
 &"enemy_idle": SubResource("Animation_ua5ty")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdpul"]
+size = Vector2(335, 530)
+
 [node name="level1" type="Node2D"]
 
 [node name="background" type="TileMapLayer" parent="."]
@@ -275,7 +279,7 @@ scale = Vector2(2, 2)
 text = "YOU WIN"
 
 [node name="player" parent="." instance=ExtResource("2_pdtm5")]
-position = Vector2(11, -31)
+position = Vector2(-67, 9)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(1, 2.38419e-07)
@@ -285,6 +289,18 @@ zoom = Vector2(5, 5)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
 stream = ExtResource("5_61w3m")
 autoplay = true
+
+[node name="Cage" type="Sprite2D" parent="."]
+position = Vector2(-111, 13)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_pdpul")
+
+[node name="Area2D" type="StaticBody2D" parent="Cage"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cage/Area2D"]
+position = Vector2(-37.5, 4.99997)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pdpul")
 
 [connection signal="switch_pressed" from="Switch" to="Switch/TileMapLayer" method="clear"]
 [connection signal="switch_pressed" from="Switch2" to="Switch2/TileMapLayer" method="clear"]
